@@ -24,6 +24,8 @@ We can change stages by changing the number in the string. For example if I want
 import App from './Stage 2/App';
 ```
 
+Also, in this project the stages will build on top of each other. For example, stage 1 has some things removed and stage 2 has the same things removed as stage 1 plus addition things. Every stage will have you repeat the process of the last stage, try to do the previous stage(s) steps from memory if possible, and re-visit their detailed instructions if you get lost.
+
 ## Setup
 
 * Run `npm install` in the root directory
@@ -386,3 +388,7 @@ export default EmployeeEditor;
 <br />
 
 <b>insert giphy of data flow when design is complete here</b>
+
+## Stage 2
+
+### Summary

@@ -57,8 +57,8 @@ class EmployeeEditor extends Component {
 
             <br />
             <br />
-            <button disabled={this.state.notModified} onClick={ this.save.bind(this) }> Save </button>
-            <button disabled={this.state.notModified} onClick={ this.cancel.bind(this) }> Cancel </button>
+            <button disabled={this.state.notModified} onClick={ this.save }> Save </button>
+            <button disabled={this.state.notModified} onClick={ this.cancel }> Cancel </button>
           </div>
           :
           <p> No Employee Selected </p>
