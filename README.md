@@ -106,6 +106,9 @@ class App extends Component {
 
 export default App;
 ```
+</details>
+
+<br />
 
 The next error we should encounter is that the `save` and `cancel` buttons in the `EmployeeEditor` component are not working. Based on the error message in the browser debugger, it appears that `this` is equal to null when inside of the `save` and `cancel` methods. Since state exists on the component, we want to use `bind` when `this` equals the component. In our `onClick` methods we can `.bind(this)` to get the correct context.
 
@@ -243,10 +246,6 @@ class EmployeeEditor extends Component {
 
 export default EmployeeEditor;
 ```
-
-</details>
-
-
 
 </details>
 
