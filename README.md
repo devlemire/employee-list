@@ -411,6 +411,8 @@ Create a `save` and a `cancel` method in the `EmployeeEditor` component.
 
 <summary> Detailed Instructions </summary>
 
+<br />
+
 Let's begin by adding empty methods to the `EmployeeEditor` component. 
 
 <details>
@@ -423,13 +425,40 @@ save() {
 }
 
 cancel() {
-  
+
 }
 ```
 
 </details>
 
 <br />
+
+Now let's dive into each of them. Let's start with `save`. On saving an employee we want to update its record in the original array that is being stored in `App.js`. If we take a look at that array of employees we'll notice that each employee is a new instance of the `Employee` model. We can check out the `Employee` model by going into `src/Stage 2/models/Employee.js`. 
+
+```js
+export default class Employee {
+  constructor(id, name, phone, title) {
+    this.id = id;
+    this.name = name;
+    this.phone = phone;
+    this.title = title;
+  }
+  
+  updateName(name) {
+    this.name = name;
+  }
+
+  updatePhone(phone) {
+    this.phone = phone;
+  }
+
+  updateTitle(title) {
+    this.title = title;
+  }
+}
+```
+
+We'll see that our `Employee` has three prototypes we can use: `updateName`, `updatePhone`, and `updateTitle`. We can use these to update each individual employee. 
 
 </details>
 
