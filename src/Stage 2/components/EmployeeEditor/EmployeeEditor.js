@@ -6,8 +6,7 @@ import '../../models/Employee';
 class EmployeeEditor extends Component {
 
   componentWillReceiveProps(props) {
-    // console.log('Component Will Receive Props', props);
-    this.setState({ employee: props.selected, originalEmployee: props.selected });
+    this.setState({ employee: props.selected, originalEmployee: props.selected, notModified: true });
   }
 
   constructor() {
@@ -20,7 +19,6 @@ class EmployeeEditor extends Component {
   }
 
   handleChange(prop, val) {
-    // console.log(prop, val);
     if ( this.state.notModified ) {
       this.setState({ notModified: false });
     }
@@ -31,7 +29,6 @@ class EmployeeEditor extends Component {
   }
 
   save() {
-    console.log(this.state.employee);
     this.state.originalEmployee.updateName(this.state.employee.name);
     this.state.originalEmployee.updatePhone(this.state.employee.phone);
     this.state.originalEmployee.updateTitle(this.state.employee.title);
@@ -44,7 +41,6 @@ class EmployeeEditor extends Component {
   }
 
   render() {
-    console.log('Employee:', this.state.employee);
     return (
       <div id="editor-container">
         { 
@@ -61,8 +57,8 @@ class EmployeeEditor extends Component {
 
             <br />
             <br />
-            <button disabled={this.state.notModified} onClick={ this.save.bind(this) }> Save </button>
-            <button disabled={this.state.notModified} onClick={ this.cancel.bind(this) }> Cancel </button>
+            <button disabled={this.state.notModified} onClick={ this.save }> Save </button>
+            <button disabled={this.state.notModified} onClick={ this.cancel }> Cancel </button>
           </div>
           :
           <p> No Employee Selected </p>

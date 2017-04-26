@@ -392,3 +392,17 @@ export default EmployeeEditor;
 ## Stage 2
 
 ### Summary
+
+In this step we will learn how our `save` and `cancel` methods function by creating them from scratch. 
+
+### Instructions
+
+Create a `save` and a `cancel` method in the `EmployeeEditor` component. 
+
+<b> Save </b>
+* Call all three `update` methods on the `Employee` model with the values on `this.state.employee`
+* Update `this.state.notModified` to be `true`
+* Call the `refreshList` method off of props
+
+<b> Cancel </b>
+* Update `employee` to be `originalEmployee` on state
