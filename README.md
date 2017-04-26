@@ -397,7 +397,7 @@ In this stage we will re-create our `handleChange` method in the `EmployeeEditor
 
 ### Instructions
 
-Create a `handleChange` method on the `EmployeeEditor` component that takes in what property to change and what value to give that property as parameters. Remember that we do not want to update the original object directly because a user may want to press cancel.
+Create a `handleChange` method on the `EmployeeEditor` component that takes in what property to change and what value to give that property as parameters. Remember that we do not want to update the original object directly because a user may want to press cancel. Also we want to update `notModified` on state from `false` to `true` since a modification has occured. 
 
 <details>
 
@@ -405,6 +405,23 @@ Create a `handleChange` method on the `EmployeeEditor` component that takes in w
 
 <br />
 
+Well start by creating the skeleton of our method:
+
+```jsx
+handleChange(prop, val) {
+
+}
+```
+
+The next thing we'll want to do is change the `notModified` property on state from `false` to `true`. When we update this property on state the Save and Cancel buttons will no longer be disabled ( allowing a user to click on them ). We also only need to update this property if it is false, so let's add an if statement to wrap our `setState` call.
+
+```jsx
+handleChange(prop, val) {
+  if ( this.state.notModified ) {
+    this.setState({ notModified })
+  }
+}
+```
 
 
 </details>
