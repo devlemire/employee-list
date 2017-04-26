@@ -3,7 +3,6 @@ import './EmployeeList.css';
 
 class EmployeeList extends Component {
   render() {
-
     return (
       <div id="list-container">
         <ul>

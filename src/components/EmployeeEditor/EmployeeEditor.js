@@ -51,7 +51,7 @@ class EmployeeEditor extends Component {
           this.state.employee
           ? 
           <div id="employee-card">
-            <p> Employee ID: {  this.state.employee.id } </p>
+            <p> Employee ID: { this.state.employee.id } </p>
             <p> Name </p>
             <input value={ this.state.employee.name } onChange={ (e) => { this.handleChange('name', e.target.value) } }></input>
             <p> Phone </p>
