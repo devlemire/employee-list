@@ -397,7 +397,17 @@ In this stage we will re-create our `handleChange` method in the `EmployeeEditor
 
 ### Instructions
 
+Create a `handleChange` method on the `EmployeeEditor` component that takes in what property to change and what value to give that property as parameters. Remember that we do not want to update the original object directly because a user may want to press cancel.
 
+<details>
+
+<summary> Detailed Instructions </summary>
+
+<br />
+
+
+
+</details>
 
 ### Solution
 
