@@ -11,13 +11,16 @@ In this project we will take a look at an employee management application and le
 * this
 * componentWillReceiveProps ( React life cycle method )
 
-We can control which stage we are on by using `index.js` in the `src/` directory. On lines 3 and 4 in `index.js` you should see
+We can control which stage we are on by using `index.js` in the `src/` directory. On lines 3 and 4 in `index.js` you should see:
 
 ```js
 // Stage 1 - 5
 import App from './Stage 1/App';
 ```
 
-We can change stages by changing the number in the string. For example if I wanted stage 2, I would do `import App from './Stage 2/App';`
+We can change stages by changing the number in the string. For example if I wanted stage 2, I would do: 
 
+```js
+import App from './Stage 2/App';
+```
 
