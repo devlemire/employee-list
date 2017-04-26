@@ -560,7 +560,7 @@ export default EmployeeEditor;
 
 ### Summary
 
-In this stage we will learn how our `save` and `cancel` methods function by creating them from scratch. 
+In this stage we will re-create our `save` and `cancel` methods in the `EmployeeEditor` component.
 
 ### Instructions
 
@@ -759,3 +759,6 @@ export default EmployeeEditor;
 ```
 
 </details>
+
+## Stage 4
+
