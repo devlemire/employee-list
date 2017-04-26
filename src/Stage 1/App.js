@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
-// Employee Class
 import Employee from './models/Employee';
 
-// Components
 import Header from './components/Header/Header';
 import EmployeeList from './components/EmployeeList/EmployeeList';
 import EmployeeEditor from './components/EmployeeEditor/EmployeeEditor';
@@ -18,19 +16,15 @@ class App extends Component {
     };
   }
 
-  // Update the selected employee, gets called from EmployeeList.js
   selectEmployee(employee) {
-    console.log(this);
     this.setState({ selectedEmployee: employee });
   }
 
-  // Refresh the list of employees on save, gets called from EmployeeEditor.js
   refresh() {
     this.setState(this.state);
   }
 
   render() {
-    // console.log(this.state.employees);
     return (
       <div id="app">
         <Header />

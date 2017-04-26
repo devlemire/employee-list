@@ -3,13 +3,11 @@ import './EmployeeList.css';
 
 class EmployeeList extends Component {
   render() {
-    console.log(this);
     return (
       <div id="list-container">
         <ul>
           { 
             this.props.employees.map((employee) => {
-              // console.log('Mapping of employe list: ', employee);
               return (
                 <li key={employee.id} onClick={ () => { this.props.selectEmployee(employee) }}> { employee.name } </li>
               )
