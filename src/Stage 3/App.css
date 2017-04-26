@@ -1,0 +1,7 @@
+#app {
+  border: 1px solid black;
+}
+
+#main-container {
+  display: flex;
+}

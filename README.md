@@ -2,7 +2,7 @@
 
 # Project Summary
 
-In this project we will create a basic employee management interface. We'll keep track of basic employee information such as name, phone, and title. We'll create this interface by covering the following topics:
+In this project we will take a look at a basic employee management interface and learn how it works. In this project we will cover the following topics: 
 
 * State
 * Props
