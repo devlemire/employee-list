@@ -14,7 +14,7 @@ In this project we will take a look at an employee management application and le
 We can control which stage we are on by using `index.js` in the `src/` directory. On lines 3 and 4 in `index.js` you should see:
 
 ```js
-// Stage 1 - 5
+// Stage 1 - 6
 import App from './Stage 1/App';
 ```
 
@@ -393,7 +393,147 @@ export default EmployeeEditor;
 
 ### Summary
 
-In this step we will learn how our `save` and `cancel` methods function by creating them from scratch. 
+In this stage we will re-create our `handleChange` method in the `EmployeeEditor` component.
+
+### Instructions
+
+
+
+### Solution
+
+<details>
+
+<summary> <code> App.js </code> </summary>
+
+```jsx
+import React, { Component } from 'react';
+import './App.css';
+
+import Employee from './models/Employee';
+
+import Header from './components/Header/Header';
+import EmployeeList from './components/EmployeeList/EmployeeList';
+import EmployeeEditor from './components/EmployeeEditor/EmployeeEditor';
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      employees: [ new Employee(0, 'James Bob', 3863089275, 'Baller'), new Employee(1, 'Smith John', 383492342, 'Ballerrrr') ],
+      selectedEmployee: null
+    };
+  }
+
+  selectEmployee(employee) {
+    this.setState({ selectedEmployee: employee });
+  }
+
+  refresh() {
+    this.setState(this.state);
+  }
+
+  render() {
+    return (
+      <div id="app">
+        <Header />
+        <div id="main-container">
+          <EmployeeList employees={this.state.employees} selectEmployee={ this.selectEmployee.bind(this) } />
+          <EmployeeEditor selected={this.state.selectedEmployee} refreshList={ this.refresh.bind(this) } />
+        </div>
+      </div>
+    )
+  }
+}
+
+export default App;
+
+```
+
+</details>
+
+<details>
+
+<summary> <code> EmployeeEdtior.js </code> </summary>
+
+```jsx
+import React, { Component } from 'react';
+import './EmployeeEditor.css';
+
+class EmployeeEditor extends Component {
+  componentWillReceiveProps(props) {
+    this.setState({ employee: props.selected, originalEmployee: props.selected, notModified: true });
+  }
+
+  constructor() {
+    super();
+    this.state = {
+      employee: null,
+      originalEmployee: null,
+      notModified: true
+    };
+  }
+
+  handleChange(prop, val) {
+    if ( this.state.notModified ) {
+      this.setState({ notModified: false });
+    }
+
+    var employee = Object.assign({}, this.state.employee);
+    employee[prop] = val;
+    this.setState({ employee: employee });
+  }
+
+  save() {
+    this.state.originalEmployee.updateName(this.state.employee.name);
+    this.state.originalEmployee.updatePhone(this.state.employee.phone);
+    this.state.originalEmployee.updateTitle(this.state.employee.title);
+    this.setState({ notModified: true });
+    this.props.refreshList();
+  }
+
+  cancel() {
+    this.setState({ employee: this.state.originalEmployee });
+  }
+
+  render() {
+    return (
+      <div id="editor-container">
+        { 
+          this.state.employee
+          ? 
+          <div id="employee-card">
+            <p> Employee ID: { this.state.employee.id } </p>
+            <p> Name </p>
+            <input value={ this.state.employee.name } onChange={ (e) => { this.handleChange('name', e.target.value) } }></input>
+            <p> Phone </p>
+            <input value={ this.state.employee.phone } onChange={ (e) => { this.handleChange('phone', e.target.value) } }></input>
+            <p> Title </p>
+            <input value={ this.state.employee.title } onChange={ (e) => { this.handleChange('title', e.target.value) } }></input>
+
+            <br />
+            <br />
+            <button disabled={this.state.notModified} onClick={ this.save.bind(this) }> Save </button>
+            <button disabled={this.state.notModified} onClick={ this.cancel.bind(this) }> Cancel </button>
+          </div>
+          :
+          <p> No Employee Selected </p>
+        }
+       
+      </div>
+    )
+  }
+}
+
+export default EmployeeEditor;
+```
+
+</details>
+
+## Stage 3
+
+### Summary
+
+In this stage we will learn how our `save` and `cancel` methods function by creating them from scratch. 
 
 ### Instructions
 
@@ -458,7 +598,9 @@ export default class Employee {
 }
 ```
 
-We'll see that our `Employee` has three prototypes we can use: `updateName`, `updatePhone`, and `updateTitle`. We can use these to update each individual employee. 
+We'll see that our `Employee` class has three prototypes: `updateName`, `updatePhone`, and `updateTitle`. We can use these to update each individual employee. 
+
+Since there is such a minimal amount to update on the employee we'll make our `save` method call all three prototypes whether or not all three have been changed.
 
 </details>
 

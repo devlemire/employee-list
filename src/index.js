@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// Stage 1 - 5
+// Stage 1 - 6
 import App from './Stage 1/App';
 import './index.css';
 
