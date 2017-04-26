@@ -762,3 +762,14 @@ export default EmployeeEditor;
 
 ## Stage 4
 
+### Summary
+
+In this stage we will re-create our `constructor` functions and state in `App.js` and `EmployeeEditor.js`.
+
+## Stage 5
+
+In this stage we will `render` our child components in `App.js`
+
+## Black Diamond
+
+Try to re-create the project from scratch.
