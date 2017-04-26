@@ -26,7 +26,6 @@ import App from './Stage 2/App';
 
 ## Setup
 
-* Fork and clone this repository
 * Run `npm install` in the root directory
 * Run `npm start` to spin up a development server
 
