@@ -4,7 +4,6 @@ export default class Employee {
     this.name = name;
     this.phone = phone;
     this.title = title;
-    this.version = 0;
   }
   
   updateName(name) {
@@ -17,9 +16,5 @@ export default class Employee {
 
   updateTitle(title) {
     this.title = title;
-  }
-
-  updateVersion() {
-    this.version++;
   }
 }
