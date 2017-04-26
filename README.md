@@ -33,4 +33,18 @@ import App from './Stage 2/App';
 
 ### Summary
 
+In this stage we will fix context issues using `.bind` and `this`. If we inspect our application we can see that when we try to interact with the components nothing is working correctly and we are getting an error that `this.setState` is not a function.
 
+### Instructions
+
+Using the browser's developer tools figure out where `.bind` needs to be applied. 
+
+<details>
+
+<summary> Detailed Instructions </summary>
+
+hi
+
+</details>
+
+### Solution
