@@ -20,6 +20,7 @@ class App extends Component {
 
   // Update the selected employee, gets called from EmployeeList.js
   selectEmployee(employee) {
+    console.log(this);
     this.setState({ selectedEmployee: employee });
   }
 
@@ -34,7 +35,7 @@ class App extends Component {
       <div id="app">
         <Header />
         <div id="main-container">
-          <EmployeeList employees={this.state.employees} selectEmployee={ this.selectEmployee } />
+          <EmployeeList employees={this.state.employees} selectEmployee={ this.selectEmployee.bind(this) } test="this is a test" />
           <EmployeeEditor selected={this.state.selectedEmployee} refreshList={ this.refresh } />
         </div>
       </div>

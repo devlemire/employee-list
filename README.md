@@ -37,13 +37,28 @@ In this stage we will fix context issues using `.bind` and `this`. If we inspect
 
 ### Instructions
 
-Using the browser's developer tools figure out where `.bind` needs to be applied. 
+Using the browser's developer tools figure out where `.bind` needs to be applied.
 
 <details>
 
 <summary> Detailed Instructions </summary>
 
-hi
+<br />
+
+The first error that you should encounter is when clicking on an employee. This error is happening when the `selectEmployee` method on `App` gets called from the `employeeList` component. What's happening here? We're losing our context of `this`. 
+
+First let's cover the data flow to figure out why our context is getting lost. Inside of `App.js` we can see on line 37 we are rendering in our `EmployeeList` component with two props. One of those props being our `selectEmployee` method on `App`. This means that inside of the `employeeList` component it can access the method through `this.props.selectEmployee`. We are then using the `selectEmployee` prop on line 13 in `EmployeeList` in combination with an `onClick` event. 
+
+Because of this current setup when the `selectEmployee` method gets called from `employeeList` `this` does not refer to the `App` class which has a `setState` method. `this` refers to the props on the `EmployeeList` component. We can prove that by adding a `console.log(this)` before `this.setState({})` gets called in the `selectEmployee` method. The log should look similiar to:
+
+```js
+{
+  employees: [],
+  selectEmployee: function
+}
+```
+
+So if the `App` component has the method of `setState` how can we keep our context of `this` when calling the method in `EmployeeList`? We can `bind` it when the context of `this` equals the `App` component. In `App.js` when we render the `EmployeeList` component we can modify the prop `selectEmployee` to `this.selectEmployee.bind(this)`.
 
 </details>
 
