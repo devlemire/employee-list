@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import './EmployeeEditor.css';
 
-import '../../models/Employee';
-
 class EmployeeEditor extends Component {
-
   componentWillReceiveProps(props) {
     this.setState({ employee: props.selected, originalEmployee: props.selected, notModified: true });
   }
