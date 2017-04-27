@@ -154,15 +154,7 @@ In this stage we will re-create our `save` and `cancel` methods in the `Employee
 
 ### Instructions
 
-Create a `save` and a `cancel` method in the `EmployeeEditor` component. 
-
-<b> Save </b>
-* Call all three `update` methods on the `Employee` model with the values on `this.state.employee`
-* Update `this.state.notModified` to be `true`
-* Call the `refreshList` method off of props
-
-<b> Cancel </b>
-* Update `employee` to be `originalEmployee` on state
+Create a `save` method after the `handleChange` method that calls all three `update` methods on the `Employee` model. Use the values on `state` when calling the `update` methods. This method should also set `notModified` not state from `true` to `false` and finally call the `refreshList` method off of props. Then create a `cancel` method after the `save` method that updates `employee` to `originalEmployee` on state. 
 
 <details>
 
