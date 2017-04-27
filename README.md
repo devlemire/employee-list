@@ -205,6 +205,8 @@ Import the `Header`, `EmployeeList`, and `EmployeeEditor` components into `App.j
 
 <summary> Detailed Instructions </summary>
 
+<br />
+
 In `src/Stage 8/App.js` let's begin by importing our three components. Based on the filte structure inside of stage 8 we can see there is a components folder at the same level of `App.js`. Therefore we will be importing our components from `'./components/'`. Let's `import` our components where it says `// Components`.
 
 ```jsx
