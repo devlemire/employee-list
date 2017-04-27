@@ -964,9 +964,19 @@ export default EmployeeEditor;
 
 ### Summary
 
-In this stage we will re-create our `constructor` functions and state in `App.js` and `EmployeeEditor.js`.
+In this stage we will re-create our `selectEmployee` and `refresh` methods on the `App` component.
+
+### Instructions
+
+### Solution
 
 ## Stage 7
+
+### Summary
+
+In this stage we will re-create our `constructor` functions and state in `App.js` and `EmployeeEditor.js`.
+
+## Stage 8
 
 In this stage we will `render` our child components in `App.js`
 
