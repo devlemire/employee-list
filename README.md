@@ -41,7 +41,7 @@ In this stage we will fix context issues using `.bind` and `this`. If we inspect
 
 ### Instructions
 
-Using the browser's developer tools figure out where `.bind` needs to be applied.
+Using the browser's developer tools figure out where `.bind` needs to be applied in `App.js` and `EmployeeEditor.js`.
 
 <details>
 
