@@ -3,9 +3,7 @@ import './App.css';
 
 import Employee from './models/Employee';
 
-import Header from './components/Header/Header';
-import EmployeeList from './components/EmployeeList/EmployeeList';
-import EmployeeEditor from './components/EmployeeEditor/EmployeeEditor';
+// Components
 
 class App extends Component {
   // constructor
@@ -17,10 +15,9 @@ class App extends Component {
   render() {
     return (
       <div id="app">
-        <Header />
+        
         <div id="main-container">
-          <EmployeeList employees={this.state.employees} selectEmployee={ this.selectEmployee } />
-          <EmployeeEditor selected={this.state.selectedEmployee} refreshList={ this.refresh } />
+          
         </div>
       </div>
     )

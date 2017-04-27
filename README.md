@@ -201,6 +201,62 @@ In this stage we will `render` our child components in `App.js`.
 
 Import the `Header`, `EmployeeList`, and `EmployeeEditor` components into `App.js`. Then `render` the `Header` component nested under the `div` with the `id` of `app` and `render` the `EmployeeList` and `EmployeeEditor` components nested under the `div` with the `id` of `main-container`. 
 
+<details>
+
+<summary> Detailed Instructions </summary>
+
+In `src/Stage 8/App.js` let's begin by importing our three components. Based on the filte structure inside of stage 8 we can see there is a components folder at the same level of `App.js`. Therefore we will be importing our components from `'./components/'`. Let's `import` our components where it says `// Components`.
+
+```jsx
+import Header from './components/Header/Header';
+import EmployeeList from './components/EmployeeList/EmployeeList';
+import EmployeeEditor from './components/EmployeeEditor/EmployeeEditor';
+```
+
+Now that `App.js` has access to these components we can then `render` them. Let's `render` the `Header` component nested inside of the `div` with the `id` of `app`. And `render` the `EmployeeList` and `EmployeeEditor` component nested in the `div` with the `id` of `main-container`.
+
+```jsx
+return (
+  <div id="app">
+    <Header />
+    <div id="main-container">
+      <EmployeeList />
+      <EmployeeEditor />
+    </div>
+  </div>
+)
+```
+
+Now we need to add the `props` so our child components can still function correctly. For `EmployeeList` to function correctly it will need two props: `employees` and `selectEmployee`. `employees` should equal the array of employees kept on state in `App.js` and `selectEmployee` should equal the method on `App.js` that calls `setState` to update the selected employee.
+
+```jsx
+return (
+  <div id="app">
+    <Header />
+    <div id="main-container">
+      <EmployeeList employees={this.state.employees} selectEmployee={ this.selectEmployee.bind(this) } />
+      <EmployeeEditor />
+    </div>
+  </div>
+)
+```
+
+For `EmployeeEditro` to function correctly it will need two props: `selected` and `refreshList`. `selected` should equal the `selectedEmployee` property on `App.js`'s state and `refreshList` should equal the method on `App.js` that calls `setState(this.state)`.
+
+```jsx
+return (
+  <div id="app">
+    <Header />
+    <div id="main-container">
+      <EmployeeList employees={this.state.employees} selectEmployee={ this.selectEmployee.bind(this) } />
+      <EmployeeEditor selected={this.state.selectedEmployee} refreshList={ this.refresh } />
+    </div>
+  </div>
+)
+```
+
+</details>
+
 ## Stage 9
 
 ### Summary
@@ -241,7 +297,7 @@ Let's remove the comment and make the skeleton for our mapping. Let's call the p
 </ul>
 ```
 
-Now each item in the `this.props.employee` array will be refrenced in our callback function as `employee` and we can add JSX inside of our return. Let's have our callback return a `<li>` element that has a `key` attribute equal the the `employee.id`. 
+Now each item in the `this.props.employee` array will be referenced in our callback function as `employee` and we can add JSX inside of our return. Let's have our callback return a `<li>` element that has a `key` attribute equal to the `employee.id`. 
 
 ```jsx
 <ul>
@@ -287,4 +343,4 @@ And finally we want the text of the `<li>` element to be the name of the `employ
 
 ## Black Diamond ( Stage 10 )
 
-Try to re-create the project from scratch.
+Re-create the project from Stages 1 - 9 without looking back at code solutions. If you have to look back at a certain stage, restart from Stage 1 again.
