@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import './EmployeeEditor.css';
 
-class EmployeeEditor extends Component {
-  componentWillReceiveProps(props) {
-    this.setState({ employee: props.selected, originalEmployee: props.selected, notModified: true });
-  }
+import '../../models/Employee';
 
+class EmployeeEditor extends Component {
   constructor() {
     super();
     this.state = {
@@ -13,6 +11,18 @@ class EmployeeEditor extends Component {
       originalEmployee: null,
       notModified: true
     };
+  }
+
+  // componentWillReceiveProps
+
+  handleChange(prop, val) {
+    if ( this.state.notModified ) {
+      this.setState({ notModified: false });
+    }
+
+    var employee = this.state.employee;
+    employee[prop] = val;
+    this.setState({ employee: employee });
   }
 
   save() {
@@ -36,11 +46,11 @@ class EmployeeEditor extends Component {
           <div id="employee-card">
             <p> Employee ID: { this.state.employee.id } </p>
             <p> Name </p>
-            <input value={ this.state.employee.name }></input>
+            <input value={ this.state.employee.name } onChange={ (e) => { this.handleChange('name', e.target.value) } }></input>
             <p> Phone </p>
-            <input value={ this.state.employee.phone }></input>
+            <input value={ this.state.employee.phone } onChange={ (e) => { this.handleChange('phone', e.target.value) } }></input>
             <p> Title </p>
-            <input value={ this.state.employee.title }></input>
+            <input value={ this.state.employee.title } onChange={ (e) => { this.handleChange('title', e.target.value) } }></input>
 
             <br />
             <br />
