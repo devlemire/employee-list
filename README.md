@@ -180,12 +180,7 @@ In this stage we will re-create our `selectEmployee` and `refresh` methods on th
 
 ### Instructions
 
-<b> selectEmployee </b>
-* Take an employee as a parameter
-* Use `setState` to update the `selectedEmployee` property on state to the passed in employee
-
-<b> refresh </b>
-* Call `setState` with `this.state` as the argument
+Create a `selectEmployee` method after the `constructor` method that takes an `employee` as a parameter. The method should then use `setState` to update the `selectedEmployee` property on state to the passed in `employee`. Then create a `refresh` method after the `selectedEmployee` method. This method should just call `setState` with the argument of `this.state`. 
 
 ## Stage 7
 
