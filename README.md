@@ -86,9 +86,11 @@ This will fix our `cancel` button context issue however you'll notice that `save
 
 ## Stage 2
 
-In this stage we will re-create our `componentWillReceiveProps` life cycle method in the `EmployeeEditor` component.
+In this stage we will re-create our `componentWillReceiveProps` life cycle method in the `EmployeeEditor` component. This life cycle method handles updating our `state` in `EmployeeEditor.js` when the `selected` prop gets updated from the `EmployeeList` component.
 
 ### Instructions
+
+Create a `componentWillReceiveProps` method in `EmployeeEditor.js` that has one parameter: `props`. The method should be written after the `constructor` method and will update the following `state` properties using `setState`: `employee` and `originalEmployee`. `employee` should be updated to a copy of the `selected` object from `props` and `originalEmployee` should be updated to the `selected` object from `props`.
 
 ## Stage 3
 

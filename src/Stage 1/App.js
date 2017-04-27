@@ -29,8 +29,8 @@ class App extends Component {
       <div id="app">
         <Header />
         <div id="main-container">
-          <EmployeeList employees={this.state.employees} selectEmployee={ this.selectEmployee } />
-          <EmployeeEditor selected={this.state.selectedEmployee} refreshList={ this.refresh } />
+          <EmployeeList employees={this.state.employees} selectEmployee={ this.selectEmployee.bind(this) } />
+          <EmployeeEditor selected={this.state.selectedEmployee} refreshList={ this.refresh.bind(this) } />
         </div>
       </div>
     )

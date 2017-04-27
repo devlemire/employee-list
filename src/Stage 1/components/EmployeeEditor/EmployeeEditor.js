@@ -4,11 +4,6 @@ import './EmployeeEditor.css';
 import '../../models/Employee';
 
 class EmployeeEditor extends Component {
-
-  componentWillReceiveProps(props) {
-    this.setState({ employee: Object.assign({}, props.selected), originalEmployee: props.selected, notModified: true });
-  }
-
   constructor() {
     super();
     this.state = {
@@ -18,13 +13,18 @@ class EmployeeEditor extends Component {
     };
   }
 
+  componentWillReceiveProps(props) {
+    this.setState({ employee: Object.assign({}, props.selected), originalEmployee: props.selected });
+  }
+
   handleChange(prop, val) {
     if ( this.state.notModified ) {
       this.setState({ notModified: false });
     }
 
-    this.state.employee[prop] = val;
-    this.setState({ employee: this.state.employee });
+    var employee = this.state.employee;
+    employee[prop] = val;
+    this.setState({ employee: employee });
   }
 
   save() {
