@@ -75,7 +75,7 @@ The next error we should encounter is that the `save` and `cancel` buttons in th
 <button disabled={this.state.notModified} onClick={ this.cancel.bind(this) }> Cancel </button>
 ```
 
-This will fix our `cancel` button context issue however you'll notice that `save` still has a context issue. This is because it calls a method passed down as a prop called `refreshList`. `refreshList` handles updating the `EmployeeList` names on the left hand side. If we add a `console.log(this)` we'll see it has a similiar issue of `this` referring to the object of props. If we `.bind(this)` when we pass the method down as a prop, just like we did for `selectEmployee`, then `this` will have the correct context.
+This will fix our `cancel` button context issue however you'll notice that `save` still has a context issue. This is because it calls a method passed down as a prop called `refreshList`. `refreshList` handles updating the `EmployeeList` names on the left hand side. If we add a `console.log(this)` in the `refreshList` method we'll see it has a similiar issue of `this` referring to the object of props. If we `.bind(this)` when we pass the method down as a prop in `App.js`, just like we did for `selectEmployee`, then `this` will have the correct context.
 
 ```jsx
 <EmployeeList employees={this.state.employees} selectEmployee={ this.selectEmployee.bind(this) } />
