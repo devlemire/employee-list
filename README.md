@@ -178,7 +178,20 @@ Create a `selectEmployee` method after the `constructor` method that takes an `e
 
 ### Summary
 
-In this stage we will re-create our `constructor` functions and state in `App.js` and `EmployeeEditor.js`.
+In this stage we will re-create our `constructor` methods and state in `App.js` and `EmployeeEditor.js`.
+
+### Instructions
+
+Create a `constructor` method that calls `super();` and creates an empty state object ( `this.state = {}` ) in both `App.js` and `EmployeeEditor.js`. 
+
+<b> State properties for `App.js` </b>
+* employees: [ ( array of new Employee ) ]
+* selectedEmployee: null
+
+<b> State properties for `EmployeeEditor.js` </b>
+* employee: null
+* originalEmployee: null
+* notModified: true
 
 ## Stage 8
 
