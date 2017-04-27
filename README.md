@@ -182,7 +182,7 @@ In this stage we will re-create our `constructor` methods and state in `App.js` 
 
 ### Instructions
 
-Create a `constructor` method that calls `super();` and creates an empty state object ( `this.state = {}` ) in both `App.js` and `EmployeeEditor.js`. 
+Create a `constructor` method that calls `super();` and creates an empty state object ( `this.state = {}` ) in both `App.js` and `EmployeeEditor.js`. Then use the bullet lists to fill in the state properties:
 
 <b> State properties for `App.js` </b>
 * employees: [ ( array of new Employee ) ]
