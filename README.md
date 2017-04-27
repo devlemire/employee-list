@@ -68,7 +68,7 @@ So if the `App` component has the method of `setState` how can we keep our conte
 <EmployeeList employees={this.state.employees} selectEmployee={ this.selectEmployee.bind(this) } />
 ```
 
-The next error we should encounter is that the `save` and `cancel` buttons in the `EmployeeEditor` component are not working. Based on the error message in the browser debugger, it appears that `this` is equal to null when inside of the `save` and `cancel` methods. Since state exists on the component, we want to use `bind` when `this` equals the component. In our `onClick` methods we can `.bind(this)` to get the correct context.
+The next error we should encounter is that the `save` and `cancel` buttons in the `EmployeeEditor` component are not working. Based on the error message in the browser debugger, it appears that `this` is equal to `null` when inside of the `save` and `cancel` methods. Since state exists on the component, we want to use `bind` when `this` equals the component. In our `onClick` methods we can `.bind(this)` to get the correct context.
 
 ```jsx
 <button disabled={this.state.notModified} onClick={ this.save.bind(this) }> Save </button>
@@ -76,6 +76,11 @@ The next error we should encounter is that the `save` and `cancel` buttons in th
 ```
 
 This will fix our `cancel` button context issue however you'll notice that `save` still has a context issue. This is because it calls a method passed down as a prop called `refreshList`. `refreshList` handles updating the `EmployeeList` names on the left hand side. If we add a `console.log(this)` we'll see it has a similiar issue of `this` referring to the object of props. If we `.bind(this)` when we pass the method down as a prop, just like we did for `selectEmployee`, then `this` will have the correct context.
+
+```jsx
+<EmployeeList employees={this.state.employees} selectEmployee={ this.selectEmployee.bind(this) } />
+<EmployeeEditor selected={this.state.selectedEmployee} refreshList={ this.refresh.bind(this) } />
+```
 
 </details>
 
