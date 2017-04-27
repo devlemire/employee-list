@@ -102,7 +102,7 @@ Create a `componentWillReceiveProps` method in `EmployeeEditor.js` that has one 
 
 ### Summary
 
-In this stage we will re-create our `handleChange` method in the `EmployeeEditor` component.
+In this stage we will re-create our `handleChange` method in `EmployeeEditor.js`.
 
 ### Instructions
 
@@ -140,7 +140,7 @@ Now we can update our `employee` property on state. However we do not want to mo
 
 ### Summary
 
-In this stage we will re-create our `Employee` model. 
+In this stage we will re-create our `Employee` model in `Employee.js`. 
 
 ### Instructions
 
@@ -169,55 +169,6 @@ Create a `save` and a `cancel` method in the `EmployeeEditor` component.
 <summary> Detailed Instructions </summary>
 
 <br />
-
-Let's begin by adding empty methods to the `EmployeeEditor` component. 
-
-<details>
-
-<summary> <code> Empty Methods </code> </summary>
-
-```jsx
-save() {
-
-}
-
-cancel() {
-
-}
-```
-
-</details>
-
-<br />
-
-Now let's dive into each of them. Let's start with `save`. On saving an employee we want to update its record in the original array that is being stored in `App.js`. If we take a look at that array of employees we'll notice that each employee is a new instance of the `Employee` model. We can check out the `Employee` model by going into `src/Stage 2/models/Employee.js`. 
-
-```js
-export default class Employee {
-  constructor(id, name, phone, title) {
-    this.id = id;
-    this.name = name;
-    this.phone = phone;
-    this.title = title;
-  }
-  
-  updateName(name) {
-    this.name = name;
-  }
-
-  updatePhone(phone) {
-    this.phone = phone;
-  }
-
-  updateTitle(title) {
-    this.title = title;
-  }
-}
-```
-
-We'll see that our `Employee` class has three prototypes: `updateName`, `updatePhone`, and `updateTitle`. We can use these to update each individual employee. 
-
-Since there is such a minimal amount to update on the employee we'll make our `save` method call all three prototypes whether or not all three have been changed.
 
 </details>
 
