@@ -180,6 +180,13 @@ In this stage we will re-create our `selectEmployee` and `refresh` methods on th
 
 ### Instructions
 
+<b> selectEmployee </b>
+* Take an employee as a parameter
+* Use `setState` to update the `selectedEmployee` property on state to the passed in employee
+
+<b> refresh <b>
+* Call `setState` with `this.state` as the argument
+
 ## Stage 7
 
 ### Summary
