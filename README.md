@@ -64,55 +64,9 @@ Because of this current setup when the `selectEmployee` method gets called from 
 
 So if the `App` component has the method of `setState` how can we keep our context of `this` when calling the method in `EmployeeList`? We can `bind` it when the context of `this` equals the `App` component. In `App.js` when we render the `EmployeeList` component we can modify the prop `selectEmployee` to `this.selectEmployee.bind(this)`. Now our `selectEmployee` method should be working properly and updating the `EmployeeEditor` component on the right.
 
-<details>
-
-<summary> <code> App.js </code> </summary>
-
 ```jsx
-import React, { Component } from 'react';
-import './App.css';
-
-import Employee from './models/Employee';
-
-import Header from './components/Header/Header';
-import EmployeeList from './components/EmployeeList/EmployeeList';
-import EmployeeEditor from './components/EmployeeEditor/EmployeeEditor';
-
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      employees: [ new Employee(0, 'James Bob', 3863089275, 'Baller'), new Employee(1, 'Smith John', 383492342, 'Ballerrrr') ],
-      selectedEmployee: null
-    };
-  }
-
-  selectEmployee(employee) {
-    this.setState({ selectedEmployee: employee });
-  }
-
-  refresh() {
-    this.setState(this.state);
-  }
-
-  render() {
-    return (
-      <div id="app">
-        <Header />
-        <div id="main-container">
-          <EmployeeList employees={this.state.employees} selectEmployee={ this.selectEmployee.bind(this) } />
-          <EmployeeEditor selected={this.state.selectedEmployee} refreshList={ this.refresh } />
-        </div>
-      </div>
-    )
-  }
-}
-
-export default App;
+<EmployeeList employees={this.state.employees} selectEmployee={ this.selectEmployee.bind(this) } />
 ```
-</details>
-
-<br />
 
 The next error we should encounter is that the `save` and `cancel` buttons in the `EmployeeEditor` component are not working. Based on the error message in the browser debugger, it appears that `this` is equal to null when inside of the `save` and `cancel` methods. Since state exists on the component, we want to use `bind` when `this` equals the component. In our `onClick` methods we can `.bind(this)` to get the correct context.
 
