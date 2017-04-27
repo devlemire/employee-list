@@ -978,7 +978,7 @@ In this stage we will re-create our `constructor` functions and state in `App.js
 
 ## Stage 8
 
-In this stage we will `render` our child components in `App.js`
+In this stage we will `render` our child components in `App.js`.
 
 ## Stage 9
 
