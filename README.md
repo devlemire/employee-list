@@ -209,6 +209,8 @@ In this stage we will `render` our list of employees in the `EmployeeList` compo
 
 ### Instructions
 
+Map over `this.props.employee` to return `<li>` elements. Use the `id` of the employee as the `key` for the element, add an `onClick` to each `<li>` to call `selectEmployee` with the current employee as an argument, and set text value of the `<li>` to the `name` of the employee.
+
 ## Black Diamond ( Stage 10 )
 
 Try to re-create the project from scratch.
