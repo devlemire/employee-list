@@ -186,7 +186,7 @@ import '../../models/Employee';
 class EmployeeEditor extends Component {
 
   componentWillReceiveProps(props) {
-    this.setState({ employee: props.selected, originalEmployee: props.selected, notModified: true });
+    this.setState({ employee: Object.assign({}, props.selected), originalEmployee: props.selected, notModified: true });
   }
 
   constructor() {
@@ -203,9 +203,8 @@ class EmployeeEditor extends Component {
       this.setState({ notModified: false });
     }
 
-    var employee = Object.assign({}, this.state.employee);
-    employee[prop] = val;
-    this.setState({ employee: employee });
+    this.state.employee[prop] = val;
+    this.setState({ employee: this.state.employee });
   }
 
   save() {
@@ -320,7 +319,7 @@ import '../../models/Employee';
 class EmployeeEditor extends Component {
 
   componentWillReceiveProps(props) {
-    this.setState({ employee: props.selected, originalEmployee: props.selected, notModified: true });
+    this.setState({ employee: Object.assign({}, props.selected), originalEmployee: props.selected, notModified: true });
   }
 
   constructor() {
@@ -337,9 +336,8 @@ class EmployeeEditor extends Component {
       this.setState({ notModified: false });
     }
 
-    var employee = Object.assign({}, this.state.employee);
-    employee[prop] = val;
-    this.setState({ employee: employee });
+    this.state.employee[prop] = val;
+    this.setState({ employee: this.state.employee });
   }
 
   save() {
@@ -381,7 +379,7 @@ class EmployeeEditor extends Component {
       </div>
     )
   }
-}
+} 
 
 export default EmployeeEditor;
 ```
@@ -394,13 +392,43 @@ export default EmployeeEditor;
 
 ## Stage 2
 
+In this stage we will re-create our `componentWillReceiveProps` life cycle method in the `EmployeeEditor` component.
+
+### Instructions
+
+### Solution
+
+<details> 
+
+<summary> <code> App.js </code> </summary>
+
+```jsx
+
+```
+
+</details>
+
+</details>
+
+<details>
+
+<summary> <code> EmployeeEditor.js </code> </summary>
+
+```jsx
+
+```
+
+</details>
+
+## Stage 2
+
 ### Summary
 
 In this stage we will re-create our `handleChange` method in the `EmployeeEditor` component.
 
 ### Instructions
 
-Create a `handleChange` method on the `EmployeeEditor` component that takes in what property to change and what value to give that property as parameters. Remember that we do not want to update the original object directly because a user may want to press cancel. Also we want to update `notModified` on state from `false` to `true` since a modification has occured. 
+Create a `handleChange` method on the `EmployeeEditor` component that takes in what property to change and what value to give that property as parameters. Remember that we do not want to update the original object directly because a user may want to press cancel. Also we want to update `notModified` on state from `true` to `false` since a modification has occured. 
 
 <details>
 
@@ -416,7 +444,7 @@ handleChange(prop, val) {
 }
 ```
 
-The next thing we'll want to do is change the `notModified` property on state from `false` to `true`. When we update this property on state the Save and Cancel buttons will no longer be disabled ( allowing a user to click on them ). We also only need to update this property if it is false, so let's add an if statement to wrap our `setState` call.
+The next thing we'll want to do is change the `notModified` property on state from `true` to `false`. When we update this property on state the Save and Cancel buttons will no longer be disabled ( allowing a user to click on them ). We also only need to update this property if it is `true`, so let's add an if statement to wrap our `setState` call.
 
 ```jsx
 handleChange(prop, val) {
@@ -426,6 +454,7 @@ handleChange(prop, val) {
 }
 ```
 
+Now we can update our `employee` property on state. However we do not want to modifiy the original 
 
 </details>
 

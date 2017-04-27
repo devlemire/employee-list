@@ -6,7 +6,7 @@ import '../../models/Employee';
 class EmployeeEditor extends Component {
 
   componentWillReceiveProps(props) {
-    this.setState({ employee: props.selected, originalEmployee: props.selected, notModified: true });
+    this.setState({ employee: Object.assign({}, props.selected), originalEmployee: props.selected, notModified: true });
   }
 
   constructor() {
@@ -23,9 +23,8 @@ class EmployeeEditor extends Component {
       this.setState({ notModified: false });
     }
 
-    var employee = Object.assign({}, this.state.employee);
-    employee[prop] = val;
-    this.setState({ employee: employee });
+    this.state.employee[prop] = val;
+    this.setState({ employee: this.state.employee });
   }
 
   save() {
