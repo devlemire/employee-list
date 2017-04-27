@@ -207,7 +207,7 @@ Import the `Header`, `EmployeeList`, and `EmployeeEditor` components into `App.j
 
 <br />
 
-In `src/Stage 8/App.js` let's begin by importing our three components. Based on the filte structure inside of stage 8 we can see there is a components folder at the same level of `App.js`. Therefore we will be importing our components from `'./components/'`. Let's `import` our components where it says `// Components`.
+In `src/Stage 8/App.js` let's begin by importing our three components. Based on the filte structure inside of stage 8 we can see there is a components folder at the same level of `App.js`. Therefore we will be importing our components from `'./components/'`. Let's `import` our components in `App.js` where it says `// Components`.
 
 ```jsx
 import Header from './components/Header/Header';
@@ -243,7 +243,7 @@ return (
 )
 ```
 
-For `EmployeeEditro` to function correctly it will need two props: `selected` and `refreshList`. `selected` should equal the `selectedEmployee` property on `App.js`'s state and `refreshList` should equal the method on `App.js` that calls `setState(this.state)`.
+For `EmployeeEditor` to function correctly it will need two props: `selected` and `refreshList`. `selected` should equal the `selectedEmployee` property on `App.js`'s state and `refreshList` should equal the method on `App.js` that calls `setState(this.state)`.
 
 ```jsx
 return (
@@ -251,7 +251,7 @@ return (
     <Header />
     <div id="main-container">
       <EmployeeList employees={this.state.employees} selectEmployee={ this.selectEmployee.bind(this) } />
-      <EmployeeEditor selected={this.state.selectedEmployee} refreshList={ this.refresh } />
+      <EmployeeEditor selected={this.state.selectedEmployee} refreshList={ this.refresh.bind(this) } />
     </div>
   </div>
 )
