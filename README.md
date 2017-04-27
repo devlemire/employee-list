@@ -92,6 +92,12 @@ In this stage we will re-create our `componentWillReceiveProps` life cycle metho
 
 Create a `componentWillReceiveProps` method in `EmployeeEditor.js` that has one parameter: `props`. The method should be written after the `constructor` method and will update the following `state` properties using `setState`: `employee` and `originalEmployee`. `employee` should be updated to a copy of the `selected` object from `props` and `originalEmployee` should be updated to the `selected` object from `props`.
 
+<details>
+
+<summary> Detailed Instructions </summary>
+
+</details>
+
 ## Stage 3
 
 ### Summary
@@ -100,7 +106,7 @@ In this stage we will re-create our `handleChange` method in the `EmployeeEditor
 
 ### Instructions
 
-Create a `handleChange` method on the `EmployeeEditor` component that takes in what property to change and what value to give that property as parameters. Remember that we do not want to update the original object directly because a user may want to press cancel. Also we want to update `notModified` on state from `true` to `false` since a modification has occured. 
+Create a `handleChange` method on the `EmployeeEditor` component that takes in what property to change and what value to give that property as parameters. Also we want to update `notModified` on state from `true` to `false` since a modification has occured. 
 
 <details>
 
