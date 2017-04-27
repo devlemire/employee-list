@@ -23,7 +23,7 @@ We can change stages by changing the number in the string. For example if I want
 import App from './Stage 2/App';
 ```
 
-Also, in this project the stages will build on top of each other. Every stage will have you repeat the process of the last stage(s). Try to do the previous stage(s) steps from memory if possible and re-visit their detailed instructions if you get lost. The solution to every file can be found on the ![solution branch](https://github.com/devlemire/employee-list/tree/solution/src)
+Also, in this project the stages will build on top of each other. Every stage will have you repeat the process of the last stage(s). Try to do the previous stage(s) steps from memory if possible and re-visit their detailed instructions if you get lost. The solution to every file can be found on the <a href="https://github.com/devlemire/employee-list/tree/solution/src">solution branch</a>
 
 ## Setup
 
