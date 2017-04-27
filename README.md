@@ -209,6 +209,6 @@ In this stage we will `render` our list of employees in the `EmployeeList` compo
 
 ### Instructions
 
-## Black Diamond
+## Black Diamond ( Stage 10 )
 
 Try to re-create the project from scratch.

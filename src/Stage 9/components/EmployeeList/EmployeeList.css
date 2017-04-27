@@ -1,0 +1,6 @@
+#list-container {
+  border: 1px solid black;
+  height: calc(100vh - 86px);
+  width: auto;
+  min-width: 200px;
+}
