@@ -32,6 +32,8 @@ Also, in this project the stages will build on top of each other. Every stage wi
 * Run `npm install` in the root directory
 * Run `npm start` to spin up a development server
 
+<b> Add image of finished project when design is complete </b>
+
 ## Stage 1
 
 ### Summary
