@@ -11,10 +11,9 @@ In this project we will take a look at an employee management application and le
 * this
 * componentWillReceiveProps ( React life cycle method )
 
-We can control which stage we are on by using `index.js` in the `src/` directory. On lines 3 and 4 in `index.js` you should see:
+We can control which stage we are on by using `index.js` in the `src/` directory. On line 3 in `index.js` you should see:
 
 ```js
-// Stage 1 - 6
 import App from './Stage 1/App';
 ```
 
@@ -420,7 +419,7 @@ In this stage we will re-create our `componentWillReceiveProps` life cycle metho
 
 </details>
 
-## Stage 2
+## Stage 3
 
 ### Summary
 
@@ -588,7 +587,7 @@ export default EmployeeEditor;
 
 </details>
 
-## Stage 3
+## Stage 4
 
 ### Summary
 
@@ -757,7 +756,7 @@ export default class Employee {
 </details>
 
 
-## Stage 3
+## Stage 5
 
 ### Summary
 
@@ -961,13 +960,13 @@ export default EmployeeEditor;
 
 </details>
 
-## Stage 4
+## Stage 6
 
 ### Summary
 
 In this stage we will re-create our `constructor` functions and state in `App.js` and `EmployeeEditor.js`.
 
-## Stage 5
+## Stage 7
 
 In this stage we will `render` our child components in `App.js`
 
