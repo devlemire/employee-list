@@ -980,6 +980,16 @@ In this stage we will re-create our `constructor` functions and state in `App.js
 
 In this stage we will `render` our child components in `App.js`
 
+## Stage 9
+
+### Summary
+
+In this stage we will `render` our list of employees in the `EmployeeList` component by mapping over the prop `employees`.
+
+### Instructions
+
+### Solution
+
 ## Black Diamond
 
 Try to re-create the project from scratch.
