@@ -131,8 +131,6 @@ In this stage we will re-create our `componentWillReceiveProps` life cycle metho
 
 ### Instructions
 
-<details> 
-
 ## Stage 3
 
 ### Summary
