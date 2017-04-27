@@ -6,8 +6,7 @@ import '../../models/Employee';
 class EmployeeEditor extends Component {
 
   componentWillReceiveProps(props) {
-    // console.log('Component Will Receive Props', props);
-    this.setState({ employee: props.selected, originalEmployee: props.selected });
+    this.setState({ employee: Object.assing(props.selected), originalEmployee: props.selected });
   }
 
   constructor() {
@@ -20,18 +19,15 @@ class EmployeeEditor extends Component {
   }
 
   handleChange(prop, val) {
-    // console.log(prop, val);
     if ( this.state.notModified ) {
       this.setState({ notModified: false });
     }
 
-    var employee = Object.assign({}, this.state.employee);
-    employee[prop] = val;
-    this.setState({ employee: employee });
+    this.state.employee[prop] = val;
+    this.setState({ employee: this.state.employee });
   }
 
   save() {
-    console.log(this.state.employee);
     this.state.originalEmployee.updateName(this.state.employee.name);
     this.state.originalEmployee.updatePhone(this.state.employee.phone);
     this.state.originalEmployee.updateTitle(this.state.employee.title);
@@ -44,7 +40,6 @@ class EmployeeEditor extends Component {
   }
 
   render() {
-    console.log('Employee:', this.state.employee);
     return (
       <div id="editor-container">
         { 
