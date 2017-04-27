@@ -197,6 +197,10 @@ Create a `constructor` method that calls `super();` and creates an empty state o
 
 In this stage we will `render` our child components in `App.js`.
 
+### Instructions
+
+Import the `Header`, `EmployeeList`, and `EmployeeEditor` components. Then `render` the `Header` component nested under the `div` with the `id` of `app` and `render` the `EmployeeList` and `EmployeeEditor` components nested under the `div` with the `id` of `main-container`.
+
 ## Stage 9
 
 ### Summary
