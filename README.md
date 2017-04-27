@@ -209,7 +209,81 @@ In this stage we will `render` our list of employees in the `EmployeeList` compo
 
 ### Instructions
 
-Map over `this.props.employee` to return `<li>` elements. Use the `id` of the employee as the `key` for the element, add an `onClick` to each `<li>` to call `selectEmployee` with the current employee as an argument, and set text value of the `<li>` to the `name` of the employee.
+Map over `this.props.employee` to return `<li>` elements. Use the `id` of the employee as the `key` for the element, add an `onClick` to each `<li>` to call `selectEmployee` with the current employee as an argument, and set the text value of the `<li>` to the `name` of the employee.
+
+<details>
+
+<summary> Detailed Instructions </summary>
+
+<br />
+
+Open `EmployeeList.js` from `src/Stage 9/components/EmployeeList/EmployeeList.js` and look for the `// Map over this.props.employees` comment. 
+
+```jsx
+<ul>
+  { 
+    // Map over this.props.employees
+  }
+</ul>
+```
+
+Let's remove the comment and make the skeleton for our mapping. Let's call the parameter for the mapping's callback function `employee` and `return` nothing.
+
+```jsx
+<ul>
+  { 
+    this.props.employees.map((employee) => {
+      return (
+
+      )
+    })
+  }
+</ul>
+```
+
+Now each item in the `this.props.employee` array will be refrenced in our callback function as `employee` and we can add JSX inside of our return. Let's have our callback return a `<li>` element that has a `key` attribute equal the the `employee.id`. 
+
+```jsx
+<ul>
+  { 
+    this.props.employees.map((employee) => {
+      return (
+        <li key={employee.id}></li>
+      )
+    })
+  }
+</ul>
+```
+
+We'll also want to add an `onClick` attribute that uses an arrow function that calls the `selectEmployee` method from props with the current `employee`. 
+
+```jsx
+<ul>
+  { 
+    this.props.employees.map((employee) => {
+      return (
+        <li key={employee.id} onClick={ () => { this.props.selectEmployee(employee) }}></li>
+      )
+    })
+  }
+</ul>
+```
+
+And finally we want the text of the `<li>` element to be the name of the `employee`.
+
+```jsx
+<ul>
+  { 
+    this.props.employees.map((employee) => {
+      return (
+        <li key={employee.id} onClick={ () => { this.props.selectEmployee(employee) }}> { employee.name } </li>
+      )
+    })
+  }
+</ul>
+```
+
+</details>
 
 ## Black Diamond ( Stage 10 )
 
