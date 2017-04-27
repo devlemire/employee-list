@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './EmployeeEditor.css';
 
-import '../../models/Employee';
-
 class EmployeeEditor extends Component {
   constructor() {
     super();
