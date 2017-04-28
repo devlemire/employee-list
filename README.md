@@ -103,7 +103,7 @@ Create a `componentWillReceiveProps` method in `EmployeeEditor.js` that has one 
 
 <br />
 
-Open `EmployeeEditor.js` from `src/Stage 2/components/EmployeeEdtior/EmployeeEditor.js` and look for the `//componentWillReceiveProps` comment. Let's create our `componentWillReceiveProps` method there with one parameter called `props`.
+Open `EmployeeEditor.js` from `src/Stage 2/components/EmployeeEditor.js` and look for the `//componentWillReceiveProps` comment. Let's create our `componentWillReceiveProps` method there with one parameter called `props`.
 
 ```jsx
 componentWillReceiveProps(props) {
