@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './EmployeeEditor.css';
 
 class EmployeeEditor extends Component {
   constructor() {

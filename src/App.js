@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
 
 import Employee from './models/Employee';
 
-import Header from './components/Header/Header';
-import EmployeeList from './components/EmployeeList/EmployeeList';
-import EmployeeEditor from './components/EmployeeEditor/EmployeeEditor';
+import Header from './components/Header';
+import EmployeeList from './components/EmployeeList';
+import EmployeeEditor from './components/EmployeeEditor';
 
 class App extends Component {
   constructor() {
