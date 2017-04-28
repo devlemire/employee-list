@@ -310,7 +310,7 @@ Create a `save` method after the `handleChange` method that calls all three `upd
 
 <br />
 
-Open `EmployeeEditor.js` in `src/Stage 5/components/EmployeeEditor/EmployeeEditor.js`. Let's begin with our `save` method. Look for the `// save` comment and let's create our `save` method skeleton. 
+Open `EmployeeEditor.js` in `src/Stage 5/components/EmployeeEditor.js`. Let's begin with our `save` method. Look for the `// save` comment and let's create our `save` method skeleton. 
 
 ```js
 save() {
