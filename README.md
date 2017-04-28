@@ -561,7 +561,7 @@ In this stage we will `render` our list of employees in the `EmployeeList` compo
 
 ### Instructions
 
-Map over `this.props.employee` to return `<li>` elements. Use the `id` of the employee as the `key` for the element, add an `onClick` to each `<li>` to call `selectEmployee` with the current employee as an argument, and set the text value of the `<li>` to the `name` of the employee.
+Map over `this.props.employee` to return `<li>` elements. Use the `id` of the employee as the `key` for the element, add an `onClick` to each `<li>` to call `selectEmployee` with the current employee as an argument, and set the text value of the `<li>` to the `name` of the employee. Also add the `className` of `listText` to each `<li>` element.
 
 <details>
 
@@ -569,10 +569,10 @@ Map over `this.props.employee` to return `<li>` elements. Use the `id` of the em
 
 <br />
 
-Open `EmployeeList.js` from `src/Stage 9/components/EmployeeList/EmployeeList.js` and look for the `// Map over this.props.employees` comment. 
+Open `EmployeeList.js` from `src/Stage 9/components/EmployeeList.js` and look for the `// Map over this.props.employees` comment. 
 
 ```jsx
-<ul>
+<ul className="listContainer">
   { 
     // Map over this.props.employees
   }
@@ -582,7 +582,7 @@ Open `EmployeeList.js` from `src/Stage 9/components/EmployeeList/EmployeeList.js
 Let's remove the comment and make the skeleton for our mapping. Let's call the parameter for the mapping's callback function `employee` and `return` nothing.
 
 ```jsx
-<ul>
+<ul className="listContainer">
   { 
     this.props.employees.map((employee) => {
       return (
@@ -593,14 +593,14 @@ Let's remove the comment and make the skeleton for our mapping. Let's call the p
 </ul>
 ```
 
-Now each item in the `this.props.employee` array will be referenced in our callback function as `employee` and we can add JSX inside of our return. Let's have our callback return a `<li>` element that has a `key` attribute equal to the `employee.id`. 
+Now each item in the `this.props.employee` array will be referenced in our callback function as `employee` and we can add JSX inside of our return. Let's have our callback return a `<li>` element that has a `key` attribute equal to the `employee.id` and `className` of `listText`. 
 
 ```jsx
-<ul>
+<ul className="listContainer">
   { 
     this.props.employees.map((employee) => {
       return (
-        <li key={employee.id}></li>
+        <li className="listText" key={employee.id}></li>
       )
     })
   }
@@ -610,11 +610,11 @@ Now each item in the `this.props.employee` array will be referenced in our callb
 We'll also want to add an `onClick` attribute that uses an arrow function that calls the `selectEmployee` method from props with the current `employee`. 
 
 ```jsx
-<ul>
+<ul className="listContainer">
   { 
     this.props.employees.map((employee) => {
       return (
-        <li key={employee.id} onClick={ () => { this.props.selectEmployee(employee) }}></li>
+        <li className="listText" key={employee.id} onClick={ () => { this.props.selectEmployee(employee) }}></li>
       )
     })
   }
@@ -624,11 +624,11 @@ We'll also want to add an `onClick` attribute that uses an arrow function that c
 And finally we want the text of the `<li>` element to be the name of the `employee`.
 
 ```jsx
-<ul>
+<ul className="listContainer">
   { 
     this.props.employees.map((employee) => {
       return (
-        <li key={employee.id} onClick={ () => { this.props.selectEmployee(employee) }}> { employee.name } </li>
+        <li className="listText" key={employee.id} onClick={ () => { this.props.selectEmployee(employee) }}> { employee.name } </li>
       )
     })
   }
