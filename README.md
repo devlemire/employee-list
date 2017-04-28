@@ -428,6 +428,53 @@ Create a `constructor` method that calls `super();` and creates an empty state o
 * originalEmployee: null
 * notModified: true
 
+<details>
+
+<summary> Detailed Instructions </summary>
+
+<br />
+
+* Open `App.js` ( `src/Stage 7/` )
+* Open `EmployeeEditor.js` ( `src/Stage 7/components/EmployeeEditor/EmployeeEditor.js` )
+
+In `App.js` look for the `// constructor` comment a create the skeleton for the `constructor` method. Remember it should call `super()` and then create an empty `state` object.
+
+```js
+constructor() {
+  super();
+  this.state = {
+
+  };
+}
+```
+
+Then using the bullet list above we can add our properties we need to state.
+
+```js
+constructor() {
+  super();
+  this.state = {
+    employees: [ new Employee(0, 'James Bob', 3863089275, 'Baller'), new Employee(1, 'Smith John', 383492342, 'Ballerrrr') ],
+    selectedEmployee: null
+  };
+}
+```
+
+Now let's do the same exact steps for `EmployeeEditor.js`
+
+```js
+constructor() {
+  super();
+  this.state = {
+    employee: null,
+    originalEmployee: null,
+    notModified: true
+  };
+}
+```
+
+</details>
+
 ## Stage 8
 
 In this stage we will `render` our child components in `App.js`.
