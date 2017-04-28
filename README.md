@@ -51,7 +51,10 @@ Using the browser's developer tools figure out where `.bind` needs to be applied
 
 <br />
 
-Open `App.js` ( `src/Stage 1/App.js` ) and `EmployeeEdtior.js` ( `src/Stage 1/components/EmployeeEdtior/EmployeeEditor.js` ). The first error that you should encounter is when clicking on an employee. This error is happening when the `selectEmployee` method on `App` gets called from the `employeeList` component. What's happening here? We're losing our context of `this`. 
+* Open `App.js` ( `src/Stage 1/App.js` )
+* Open `EmployeeEdtior.js` ( `src/Stage 1/components/EmployeeEdtior/EmployeeEditor.js` )
+
+The first error that you should encounter is when clicking on an employee. This error is happening when the `selectEmployee` method on `App` gets called from the `employeeList` component. What's happening here? We're losing our context of `this`. 
 
 First let's cover the data flow to figure out why our context is getting lost. Inside of `App.js` we can see on line 37 we are rendering in our `EmployeeList` component with two props. One of those props being our `selectEmployee` method on `App`. This means that inside of the `employeeList` component it can access the method through `this.props.selectEmployee`. We are then using the `selectEmployee` prop on line 13 in `EmployeeList` in combination with an `onClick` event. 
 
