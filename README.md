@@ -302,7 +302,7 @@ In this stage we will re-create our `save` and `cancel` methods in the `Employee
 
 ### Instructions
 
-Create a `save` method after the `handleChange` method that calls all three `update` methods on the `Employee` model. Use the values on `state` when calling the `update` methods. This method should also set `notModified` on state to `true` and finally call the `refreshList` method off of props. Then create a `cancel` method after the `save` method that updates `employee` to a copy of the `originalEmployee` and updates `notModified` to `true` on state. 
+Create a `save` method after the `handleChange` method that calls all three `update` methods on the `Employee` model. Remember that `originalEmployee` has access to the methods and `employee` doesn't because it is a copy. Use the values on `state` when calling the `update` methods. This method should also set `notModified` on state to `true` and finally call the `refreshList` method off of props. Then create a `cancel` method after the `save` method that updates `employee` to a copy of the `originalEmployee` and updates `notModified` to `true` on state. 
 
 <details>
 
