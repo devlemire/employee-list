@@ -192,7 +192,45 @@ handleChange(prop, val) {
 }
 ```
 
-Next, we'll want our method to update the `employee` object on state, we should never update state directly without using `setState` so let's create a variable called 
+Next, we'll want our method to update the `employee` object on state, we should never mutate state directly so we'll have to make another copy of our `employee` property on state before modifying it and finally updating it with `this.setState`. Lets create a variable called `employeeCopy` that equals a copy of the `employee` property on state.
+
+```jsx
+handleChange(prop, val) {
+  if ( this.state.notModified ) {
+    this.setState({ notModified: false })
+  }
+
+  var employeeCopy = Object.assign({}, this.state.employee);
+}
+```
+
+We can then use bracket notation to take our string, `prop`, to access that property on the `employeeCopy` object and update its value with `val`.
+
+```jsx
+handleChange(prop, val) {
+  if ( this.state.notModified ) {
+    this.setState({ notModified: false })
+  }
+
+  var employeeCopy = Object.assign({}, this.state.employee);
+  employeeCopy[prop] = val;
+}
+```
+
+Then to update state is as easy as updating `employee` to our `employeeCopy` variable.
+
+
+```jsx
+handleChange(prop, val) {
+  if ( this.state.notModified ) {
+    this.setState({ notModified: false })
+  }
+
+  var employeeCopy = Object.assign({}, this.state.employee);
+  employeeCopy[prop] = val;
+  this.setState({ employee: employeeCopy });
+}
+```
 
 </details>
 
