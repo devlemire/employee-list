@@ -34,8 +34,8 @@ class EmployeeEditor extends Component {
   }
 
   cancel() {
-    var employee = Object.assign({}, this.state.originalEmployee);
-    this.setState({ employee: employee });
+    var employeeCopy = Object.assign({}, this.state.originalEmployee);
+    this.setState({ employee: employeeCopy });
   }
 
   render() {
