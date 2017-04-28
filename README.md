@@ -174,7 +174,7 @@ Create a `handleChange` method on the `EmployeeEditor` component that takes in w
 
 <br />
 
-Open `EmployeeEditor.js` in `src/Stage 3/components/EmployeeEditor/EmployeeEditor.js` and look for the `// handleChange` comment. Let's create the skeleton of the method there.
+Open `EmployeeEditor.js` in `src/Stage 3/components/EmployeeEditor.js` and look for the `// handleChange` comment. Let's create the skeleton of the method there.
 
 ```jsx
 handleChange(prop, val) {
