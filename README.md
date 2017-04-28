@@ -367,7 +367,47 @@ In this stage we will re-create our `selectEmployee` and `refresh` methods on th
 
 ### Instructions
 
-Create a `selectEmployee` method after the `constructor` method that takes an `employee` as a parameter. The method should then use `setState` to update the `selectedEmployee` property on state to the passed in `employee`. Then create a `refresh` method after the `selectedEmployee` method. This method should just call `setState` with the argument of `this.state`. 
+Create a `selectEmployee` method after the `constructor` method that takes an `employee` as a parameter. The method should then use `setState` to update the `selectedEmployee` property on state to the passed in `employee`. Then create a `refresh` method after the `selectedEmployee` method. This method should just call `setState` with the argument of `this.state`.
+
+<details>
+
+<summary> Detailed Instruction </summary>
+
+<br />
+
+Open `App.js` in `src/Stage 6/`. Let's begin with the `selectEmployee` method, look for the `// selectEmployee` comment and let's create the skeleton of our method. This method will have one parameter being the object of the employee that was selected.
+
+```js
+selectEmployee(employee) {
+
+}
+```
+
+All we need this method to do is update the `selectedEmployee` property on state. We'll do that by using `this.setState`.
+
+```js
+selectEmployee(employee) {
+  this.setState({ selectedEmployee: employee });
+}
+```
+
+Next let's create the skeleton of our `refresh` method. Look for the `// refresh` comment.
+
+```js
+refresh() {
+
+}
+```
+
+This method is another simple one that will refresh our state, effectively updating all our components, by calling `this.setState` and passing in the current state as the object. Since we are updating our employees using methods on their class our state does not automatically trigger a re-render. 
+
+```js
+refresh() {
+  this.setState(this.state);
+}
+```
+
+</details> 
 
 ## Stage 7
 
