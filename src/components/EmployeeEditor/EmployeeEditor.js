@@ -46,7 +46,7 @@ class EmployeeEditor extends Component {
           ? 
           <div>
             <span id="employeeID"> ID: { this.state.employee.id } </span>
-            <p id="employeeTitle"> { this.state.employee.name } </p>
+            <p id="employeeTitle"> { this.state.originalEmployee.name } </p>
             <br />
             <button id="saveBtn" className="confirmationButton" disabled={this.state.notModified} onClick={ this.save.bind(this) }> Save </button>
             <button className="neutralButton" disabled={this.state.notModified} onClick={ this.cancel.bind(this) }> Cancel </button>
