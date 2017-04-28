@@ -96,6 +96,33 @@ Create a `componentWillReceiveProps` method in `EmployeeEditor.js` that has one 
 
 <summary> Detailed Instructions </summary>
 
+Open `EmployeeEditor.js` from `src/Stage 2/components/EmployeeEdtior/EmployeeEditor.js` and look for the `//componentWillReceiveProps` comment. Let's create our `componentWillReceiveProps` method there with one parameter called `props`.
+
+```jsx
+componentWillReceiveProps(props) {
+
+}
+```
+
+This life cycle method will be called whenever the `props` for `EmployeeEditor` get updated after the initial render. We use the parameter `props` to catch the updated props object and use it with `this.setState` to update our state. Remember that we want to update `employee` and `originalEmployee` with the `selected` prop. We also want to make sure that `employee` is a copy of the `selected` object. 
+
+Let's dive into why we are using `employee` and `originalEmployee`, or in other words why a copy and a original of the same object. In JavaScript if I set a variable equal to an already defined object they both reference the same object. For example:
+
+```js
+var obj1 = {
+  name: 'James'
+}
+
+var obj2 = obj1;
+obj2.name = 'Override';
+
+console.log(obj1.name); // 'Override'
+```
+
+Even though I created a new variable `obj2` and changed the `name` property on `obj2`, `obj2` and `obj1`'s `name` property was updated to `'Override'`. This would be bad for our `onChange` event that updates our state because we don't want changes to be final until the user presses the `Save` button.
+
+
+
 </details>
 
 ## Stage 3
