@@ -96,6 +96,8 @@ Create a `componentWillReceiveProps` method in `EmployeeEditor.js` that has one 
 
 <summary> Detailed Instructions </summary>
 
+<br />
+
 Open `EmployeeEditor.js` from `src/Stage 2/components/EmployeeEdtior/EmployeeEditor.js` and look for the `//componentWillReceiveProps` comment. Let's create our `componentWillReceiveProps` method there with one parameter called `props`.
 
 ```jsx
@@ -104,7 +106,14 @@ componentWillReceiveProps(props) {
 }
 ```
 
-This life cycle method will be called whenever the `props` for `EmployeeEditor` get updated after the initial render. We use the parameter `props` to catch the updated props object and use it with `this.setState` to update our state. Remember that we want to update `employee` and `originalEmployee` with the `selected` prop. We also want to make sure that `employee` is a copy of the `selected` object. 
+This life cycle method will be called whenever the `props` for `EmployeeEditor` get updated after the initial render. We'll use the parameter `props` to catch the updated props object and use it with `this.setState` to update our state. Remember that we want to update `employee` and `originalEmployee` on state with the `selected` prop. We also want to make sure that `employee` is a copy of the `selected` object. Since our `EmployeeEditor` component is only rendered with two `props`, our `props` parameter in `componentWillReceiveProps` will look like: 
+
+```js
+{
+  selected: { } // This is an object of 1 employee ( the one that was selected from the list )
+  refreshList: function // This is a method from App.js that will refresh the list of employees
+}
+```
 
 Let's dive into why we are using `employee` and `originalEmployee`, or in other words why a copy and a original of the same object. In JavaScript if I set a variable equal to an already defined object they both reference the same object. For example:
 
