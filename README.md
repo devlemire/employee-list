@@ -310,7 +310,35 @@ Create a `save` method after the `handleChange` method that calls all three `upd
 
 <br />
 
+Open `EmployeeEditor.js` in `src/Stage 5/components/EmployeeEditor/EmployeeEditor.js`. Let's begin with our `save` method. Look for the `// save` comment and let's create our `save` method skeleton. 
 
+```js
+save() {
+
+}
+```
+
+In this `save` method we will want to use the `prototypes` on the `Employee` class to update our values. Since there are only three properties to update let's just call all three update methods regardless of which one has changed. It would be more code to check which one to update. 
+
+```js
+save() {
+  this.state.originalEmployee.updateName(this.state.employee.name);
+  this.state.originalEmployee.updatePhone(this.state.employee.phone);
+  this.state.originalEmployee.updateTitle(this.state.employee.title);
+}
+```
+
+Then we'll need to set `notModified` back to `true` since we have now updated that employee and no modifications have happened since saving. We'll also need to call `refreshList` so that our `EmployeeList` will re-render with the name change if there is one.
+
+```js
+save() {
+  this.state.originalEmployee.updateName(this.state.employee.name);
+  this.state.originalEmployee.updatePhone(this.state.employee.phone);
+  this.state.originalEmployee.updateTitle(this.state.employee.title);
+  this.setState({ notModified: true });
+  this.props.refreshList();
+}
+```
 
 </details>
 
