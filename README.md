@@ -56,9 +56,9 @@ Using the browser's developer tools figure out where `.bind` needs to be applied
 
 The first error that you should encounter is when clicking on an employee. This error is happening when the `selectEmployee` method on `App` gets called from the `employeeList` component. What's happening here? We're losing our context of `this`. 
 
-First let's cover the data flow to figure out why our context is getting lost. Inside of `App.js` we can see on line 37 we are rendering in our `EmployeeList` component with two props. One of those props being our `selectEmployee` method on `App`. This means that inside of the `employeeList` component it can access the method through `this.props.selectEmployee`. We are then using the `selectEmployee` prop on line 13 in `EmployeeList` in combination with an `onClick` event. 
+First let's cover the data flow to figure out why our context is getting lost. Inside of `App.js` we can see on line 32 we are rendering in our `EmployeeList` component with two props. One of those props being our `selectEmployee` method on `App`. This means that inside of the `employeeList` component it can access the method through `this.props.selectEmployee`. We are then using the `selectEmployee` prop on line 12 in `EmployeeList.js` in combination with an `onClick` event. 
 
-Because of this current setup when the `selectEmployee` method gets called from `employeeList` `this` does not refer to the `App` class which has a `setState` method. `this` refers to the props on the `EmployeeList` component. We can prove that by adding a `console.log(this)` before `this.setState({})` gets called in the `selectEmployee` method. The log should look similiar to:
+Because of this current setup when the `selectEmployee` method gets called from the `employeeList` component `this` does not refer to the `App` class which has a `setState` method. `this` refers to the props on the `EmployeeList` component. We can prove that by adding a `console.log(this)` before `this.setState({})` gets called in the `selectEmployee` method. The log should look similiar to:
 
 ```js
 {
@@ -174,7 +174,7 @@ Create a `handleChange` method on the `EmployeeEditor` component that takes in w
 
 <br />
 
-Well start by creating the skeleton of our method:
+Open `EmployeeEditor.js` in `src/Stage 3/components/EmployeeEditor/EmployeeEditor.js` and look for the `// handleChange` comment. Let's create the skeleton of the method there.
 
 ```jsx
 handleChange(prop, val) {
@@ -182,17 +182,17 @@ handleChange(prop, val) {
 }
 ```
 
-The next thing we'll want to do is change the `notModified` property on state from `true` to `false`. When we update this property on state the Save and Cancel buttons will no longer be disabled ( allowing a user to click on them ). We also only need to update this property if it is `true`, so let's add an if statement to wrap our `setState` call.
+In this method we'll want to change the `notModified` property on state from `true` to `false`. When we update `notModified` to `false` the Save and Cancel buttons will no longer be disabled ( allowing a user to click on them ). We also only need to update this property if it is `true`, so let's add an if statement to wrap our `setState` call.
 
 ```jsx
 handleChange(prop, val) {
   if ( this.state.notModified ) {
-    this.setState({ notModified })
+    this.setState({ notModified: false })
   }
 }
 ```
 
-Now we can update our `employee` property on state. However we do not want to modifiy the original 
+Next, we'll want our method to update the `employee` object on state, we should never update state directly without using `setState` so let's create a variable called 
 
 </details>
 
