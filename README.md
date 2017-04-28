@@ -141,7 +141,7 @@ obj2.name = 'Override';
 console.log(obj1.name); // 'James'
 ```
 
-There is a down side to `Object.assign` in this scenario however, which is why we are also using a state property called `originalEmployee`. When using `Object.assign` we only get a copy of the properties on the object but not the `prototypes`. We will need those `prototypes` for a later stage so we'll just use `originalEmployee` to store the original object.
+There is a down side to `Object.assign` in this scenario however, which is why we are also using a state property called `originalEmployee`. When using `Object.assign` we only get a copy of the properties on the object but not the `prototypes`. We will need those `prototypes` for a later stage so we'll just use `originalEmployee` to store the original object. As a bonus since we have an original copy of the object, canceling changes is as easy as setting `employee` equal to a copy of `originalEmployee`.
 
 
 
