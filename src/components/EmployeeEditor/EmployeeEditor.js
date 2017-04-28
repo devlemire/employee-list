@@ -40,26 +40,27 @@ class EmployeeEditor extends Component {
 
   render() {
     return (
-      <div id="editor-container">
+      <div className="infoCard">
         { 
           this.state.employee
           ? 
-          <div id="employee-card">
-            <p> Employee ID: { this.state.employee.id } </p>
-            <p> Name </p>
-            <input value={ this.state.employee.name } onChange={ (e) => { this.handleChange('name', e.target.value) } }></input>
-            <p> Phone </p>
-            <input value={ this.state.employee.phone } onChange={ (e) => { this.handleChange('phone', e.target.value) } }></input>
-            <p> Title </p>
-            <input value={ this.state.employee.title } onChange={ (e) => { this.handleChange('title', e.target.value) } }></input>
+          <div>
 
+            <span id="employeeID"> ID: { this.state.employee.id } </span>
+            <p id="employeeTitle"> { this.state.employee.name } </p>
             <br />
+            <button id="saveBtn" className="confirmationButton" disabled={this.state.notModified} onClick={ this.save.bind(this) }> Save </button>
+            <button className="neutralButton" disabled={this.state.notModified} onClick={ this.cancel.bind(this) }> Cancel </button>
             <br />
-            <button disabled={this.state.notModified} onClick={ this.save.bind(this) }> Save </button>
-            <button disabled={this.state.notModified} onClick={ this.cancel.bind(this) }> Cancel </button>
+            <span className="placeholderText"> Name </span>
+            <input className="materialInput" value={ this.state.employee.name } onChange={ (e) => { this.handleChange('name', e.target.value) } }></input>
+            <span className="placeholderText"> Phone Number </span>
+            <input className="materialInput" value={ this.state.employee.phone } onChange={ (e) => { this.handleChange('phone', e.target.value) } }></input>
+            <span className="placeholderText"> Title </span>
+            <input className="materialInput" value={ this.state.employee.title } onChange={ (e) => { this.handleChange('title', e.target.value) } }></input>
           </div>
           :
-          <p> No Employee Selected </p>
+          <p id="noEmployee"> No Employee Selected </p>
         }
        
       </div>

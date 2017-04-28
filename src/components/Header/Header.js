@@ -4,8 +4,9 @@ import './Header.css';
 class Header extends Component {
   render() {
     return (
-      <div id="header-container">
-        <h1 id="header"> Employees </h1>
+      // <div id="header-container">
+      <div className="titleBar">
+        <span className="titleText"> Employee Manager </span>
       </div>
     )
   }
