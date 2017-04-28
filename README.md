@@ -128,7 +128,20 @@ obj2.name = 'Override';
 console.log(obj1.name); // 'Override'
 ```
 
-Even though I created a new variable `obj2` and changed the `name` property on `obj2`, `obj2` and `obj1`'s `name` property was updated to `'Override'`. This would be bad for our `onChange` event that updates our state because we don't want changes to be final until the user presses the `Save` button.
+Even though I created a new variable `obj2` and changed the `name` property on `obj2`, `obj2` and `obj1`'s `name` property was updated to `'Override'`. This would be bad for an `onChange` event that updates a state property every time a user types because we don't want changes to be final until the user presses the `Save` button. To get around this issue we can use `Object.assign()` to make a copy of an object into a new object; effectively separating the two. 
+
+```js
+var obj1 = {
+  name: 'James'
+}
+
+var obj2 = Object.assign({}, obj1);
+obj2.name = 'Override';
+
+console.log(obj1.name); // 'James'
+```
+
+There is a down side to `Object.assign` in this scenario however, which is why we are also using a state property called `originalEmployee`. When using `Object.assign` we only get a copy of the properties on the object but not the `prototypes`. We will need those `prototypes` for a later stage so we'll just use `originalEmployee` to store the original object.
 
 
 
