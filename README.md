@@ -340,6 +340,23 @@ save() {
 }
 ```
 
+Now let's create our cancel method skeleton where the `// cancel` comment is.
+
+```js
+cancel() {
+
+}
+```
+
+In this method we'll want to make a copy of the `originalEmployee` property on state and assign it to a variable. Then we'll use `setState` to update our `employee` with the new variable we just made and also set `notModified` to `true`.
+
+```js
+cancel() {
+  var employeeCopy = Object.assign({}, this.state.originalEmployee);
+  this.setState({ employee: employeeCopy, notModified: true });
+}
+```
+
 </details>
 
 ## Stage 6
