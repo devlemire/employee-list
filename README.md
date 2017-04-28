@@ -515,7 +515,7 @@ Now that `App.js` has access to these components we can then `render` them. Let'
 return (
   <div id="app">
     <Header />
-    <div id="main-container">
+    <div className="main-container">
       <EmployeeList />
       <EmployeeEditor />
     </div>
@@ -529,7 +529,7 @@ Now we need to add the `props` so our child components can still function correc
 return (
   <div id="app">
     <Header />
-    <div id="main-container">
+    <div className="main-container">
       <EmployeeList employees={this.state.employees} selectEmployee={ this.selectEmployee.bind(this) } />
       <EmployeeEditor />
     </div>
@@ -543,7 +543,7 @@ For `EmployeeEditor` to function correctly it will need two props: `selected` an
 return (
   <div id="app">
     <Header />
-    <div id="main-container">
+    <div className="main-container">
       <EmployeeList employees={this.state.employees} selectEmployee={ this.selectEmployee.bind(this) } />
       <EmployeeEditor selected={this.state.selectedEmployee} refreshList={ this.refresh.bind(this) } />
     </div>
