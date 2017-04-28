@@ -95,7 +95,7 @@ In this stage we will re-create our `componentWillReceiveProps` life cycle metho
 
 ### Instructions
 
-Create a `componentWillReceiveProps` method in `EmployeeEditor.js` that has one parameter: `props`. The method should be written after the `constructor` method and will update the following `state` properties using `setState`: `employee` and `originalEmployee`. `employee` should be updated to a copy of the `selected` object from `props` and `originalEmployee` should be updated to the `selected` object from `props`.
+Create a `componentWillReceiveProps` method in `EmployeeEditor.js` that has one parameter: `props`. The method should be written after the `constructor` method and will update the following `state` properties using `setState`: `employee`, `originalEmployee`, and `notModified`. `employee` should be updated to a copy of the `selected` object from `props`, `originalEmployee` should be updated to the `selected` object from `props`, and `notModified` should be updated to `true`.
 
 <details>
 
@@ -111,7 +111,7 @@ componentWillReceiveProps(props) {
 }
 ```
 
-This life cycle method will be called whenever the `props` for `EmployeeEditor` get updated after the initial render. We'll use the parameter `props` to catch the updated props object and use it with `this.setState` to update our state. Remember that we want to update `employee` and `originalEmployee` on state with the `selected` prop. We also want to make sure that `employee` is a copy of the `selected` object. Since our `EmployeeEditor` component is only rendered with two `props`, our `props` parameter in `componentWillReceiveProps` will look like: 
+This life cycle method will be called whenever the `props` for `EmployeeEditor` get updated after the initial render. We'll use the parameter `props` to catch the updated props object and use it with `this.setState` to update our state. Remember that we want to update `employee` and `originalEmployee` on state with the `selected` prop and update `notModified` to `true`. We also want to make sure that `employee` is a copy of the `selected` object. Since our `EmployeeEditor` component is only rendered with two `props`, our `props` parameter in `componentWillReceiveProps` will look like: 
 
 ```js
 {
@@ -148,7 +148,7 @@ console.log(obj1.name); // 'James'
 
 There is a down side to `Object.assign` in this scenario however, which is why we are also using a state property called `originalEmployee`. When using `Object.assign` we only get a copy of the properties on the object but not the `prototypes`. We will need those `prototypes` for a later stage so we'll just use `originalEmployee` to store the original object. As a bonus since we have an original copy of the object, canceling changes is as easy as setting `employee` equal to a copy of `originalEmployee`.
 
-So getting back to the problem at hand, our `componentWillReceiveProps` method. Let's use `this.setState` to update `employee` to be a copy of `props.selected` and update `originalEmployee` to be `props.selected`.
+So getting back to the problem at hand, our `componentWillReceiveProps` method. Let's use `this.setState` to update `employee` to be a copy of `props.selected`, `originalEmployee` to be `props.selected`, `notModified` to be true. We reset `notModified` to true so when a user selects a new employee the Save and Cancel button wont be enabled until they make a change again.
 
 ```js
 componentWillReceiveProps(props) {
@@ -192,7 +192,7 @@ handleChange(prop, val) {
 }
 ```
 
-Next, we'll want our method to update the `employee` object on state, we should never mutate state directly so we'll have to make another copy of our `employee` property on state before modifying it and finally updating it with `this.setState`. Lets create a variable called `employeeCopy` that equals a copy of the `employee` property on state.
+Next, we'll want our method to update the `employee` object on state, we should never mutate state directly so we'll have to make a copy of our `employee` property on state before modifying it and finally updating it with `this.setState`. Lets create a variable called `employeeCopy` that equals a copy of the `employee` property on state.
 
 ```jsx
 handleChange(prop, val) {
