@@ -45,7 +45,6 @@ class EmployeeEditor extends Component {
           this.state.employee
           ? 
           <div>
-
             <span id="employeeID"> ID: { this.state.employee.id } </span>
             <p id="employeeTitle"> { this.state.employee.name } </p>
             <br />
