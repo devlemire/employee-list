@@ -152,7 +152,7 @@ So getting back to the problem at hand, our `componentWillReceiveProps` method. 
 
 ```js
 componentWillReceiveProps(props) {
-  this.setState({ employee: Object.assign({}, props.selected), originalEmployee: props.selected });
+  this.setState({ employee: Object.assign({}, props.selected), originalEmployee: props.selected, notModified: true });
 }
 ```
 
