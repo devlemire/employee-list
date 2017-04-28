@@ -242,7 +242,7 @@ In this stage we will re-create our `Employee` model in `Employee.js`.
 
 ### Instructions
 
-Create a class called `Employee` in `models/Employee.js`. This class should have a constructor method that takes an `id`, `name`, `phone`, and `title` parameter. It should then assign those onto the class. This class should also have three methods: `updateName`, `updatePhone`, and `updateTitle`. Each method will take in a string as a parameter and then update the corresponding property on the class with the string.
+Create a class called `Employee` in `src/Stage 4/models/Employee.js`. This class should have a constructor method that takes an `id`, `name`, `phone`, and `title` parameter. It should then assign those onto the class. This class should also have three methods: `updateName`, `updatePhone`, and `updateTitle`. Each method will take in a string as a parameter and then update the corresponding property on the class with the string.
 
 <details>
 
