@@ -244,6 +244,56 @@ In this stage we will re-create our `Employee` model in `Employee.js`.
 
 Create a class called `Employee` in `models/Employee.js`. This class should have a constructor method that takes an `id`, `name`, `phone`, and `title` parameter. It should then assign those onto the class. This class should also have three methods: `updateName`, `updatePhone`, and `updateTitle`. Each method will take in a string as a parameter and then update the corresponding property on the class with the string.
 
+<details>
+
+<summary> Detailed Instructions </summary>
+
+<br />
+
+Open `Employee.js` in `src/Stage 4/models/Employee.js`. We'll start by adding our `constructor` method where the `// constructor` comment is. This method gets called when a `new Employee` class is created. We'll be making new employees with four items. An `id`, a `name`, a `phone`, and a `title`. Therefore we'll want to make a `constructor` method with four parameters to capture those items.
+
+```js
+constructor(id, name, phone, title) {
+  
+}
+```
+
+Then we can assign them to the class by using `this`. 
+
+```js
+constructor(id, name, phone, title) {
+  this.id = id;
+  this.name = name;
+  this.phone = phone;
+  this.title = title;
+}
+```
+
+Now all we need are three methods, one to update the `name`, one to update the `phone`, and one to update the `title`. For simplicity I broke these out into three methods, they'll be very similiar to each other. All three methods will take in a `string` parameter and then update the corresponding property on the class to that `string`. 
+
+```js
+constructor(id, name, phone, title) {
+  this.id = id;
+  this.name = name;
+  this.phone = phone;
+  this.title = title;
+}
+
+updateName(name) {
+  this.name = name;
+}
+
+updatePhone(phone) {
+  this.phone = phone;
+}
+
+updateTitle(title) {
+  this.title = title;
+}
+```
+
+</details>
+
 ## Stage 5
 
 ### Summary
