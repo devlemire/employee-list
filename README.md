@@ -420,7 +420,7 @@ In this stage we will re-create our `constructor` methods and state in `App.js` 
 Create a `constructor` method that calls `super();` and creates an empty state object ( `this.state = {}` ) in both `App.js` and `EmployeeEditor.js`. Then use the bullet lists to fill in the state properties:
 
 <b> State properties for `App.js` </b>
-* employees: [ ( array of new Employee ) ]
+* employees: [ new Employee(0, 'Bernice Ortiz', 4824931093, 'CEO'), new Employee(1, 'Marnie Barnett', 3094812387, 'CTO'), new Employee(2, 'Phillip Weaver', 7459831843, 'Manager'), new Employee(3, 'Teresa Osborne', 3841238745, 'Director of Engineering'), new Employee(4, 'Dollie Berry', 4873459812, 'Front-End Developer'), new Employee(5, 'Harriett Williamson', 6571249801, 'Front-End Developer'), new Employee(6, 'Ruby Estrada', 5740923478, 'Back-End Developer'), new Employee(7, 'Lou White', 8727813498, 'Full-Stack Developer'), new Employee(8, 'Eve Sparks', 8734567810, 'Product Manager'), new Employee(9, 'Lois Brewer', 8749823456, 'Sales Manager') ]
 * selectedEmployee: null
 
 <b> State properties for `EmployeeEditor.js` </b>
@@ -435,7 +435,7 @@ Create a `constructor` method that calls `super();` and creates an empty state o
 <br />
 
 * Open `App.js` ( `src/Stage 7/` )
-* Open `EmployeeEditor.js` ( `src/Stage 7/components/EmployeeEditor/EmployeeEditor.js` )
+* Open `EmployeeEditor.js` ( `src/Stage 7/components/EmployeeEditor.js` )
 
 In `App.js` look for the `// constructor` comment a create the skeleton for the `constructor` method. Remember it should call `super()` and then create an empty `state` object.
 
