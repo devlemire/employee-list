@@ -52,7 +52,7 @@ Using the browser's developer tools figure out where `.bind` needs to be applied
 <br />
 
 * Open `App.js` ( `src/Stage 1/App.js` )
-* Open `EmployeeEdtior.js` ( `src/Stage 1/components/EmployeeEdtior/EmployeeEditor.js` )
+* Open `EmployeeEdtior.js` ( `src/Stage 1/components/EmployeeEditor.js` )
 
 The first error that you should encounter is when clicking on an employee. This error is happening when the `selectEmployee` method on `App` gets called from the `employeeList` component. What's happening here? We're losing our context of `this`. 
 
@@ -76,8 +76,8 @@ So if the `App` component has the method of `setState` how can we keep our conte
 The next error we should encounter is that the `save` and `cancel` buttons in the `EmployeeEditor` component are not working. Based on the error message in the browser debugger, it appears that `this` is equal to `null` when inside of the `save` and `cancel` methods. Since state exists on the component, we want to use `bind` when `this` equals the component. In our `onClick` methods we can `.bind(this)` to get the correct context.
 
 ```jsx
-<button disabled={this.state.notModified} onClick={ this.save.bind(this) }> Save </button>
-<button disabled={this.state.notModified} onClick={ this.cancel.bind(this) }> Cancel </button>
+<button id="saveBtn" className="confirmationButton" disabled={this.state.notModified} onClick={ this.save.bind(this) }> Save </button>
+<button className="neutralButton" disabled={this.state.notModified} onClick={ this.cancel.bind(this) }> Cancel </button>
 ```
 
 This will fix our `cancel` button context issue however you'll notice that `save` still has a context issue. This is because it calls a method passed down as a prop called `refreshList`. `refreshList` handles updating the `EmployeeList` names on the left hand side. If we add a `console.log(this)` in the `refreshList` method we'll see it has a similiar issue of `this` referring to the object of props. If we `.bind(this)` when we pass the method down as a prop in `App.js`, just like we did for `selectEmployee`, then `this` will have the correct context.
