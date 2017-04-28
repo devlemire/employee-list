@@ -14,7 +14,7 @@ body {
   height: 64px;
   background-color: #ffffff;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.23);
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,34 +25,32 @@ body {
   height: 300px;
   border-radius: 2px;
   background-color: #ffffff;
-  background-color: var(--white);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-  /*margin: 8px*/
   margin: 10px 0px;
   padding: 5px;
 }
 
 .listContainer {
-  width: 265px;
-  height: 48px;
-  background-color: #f2f2f2;
-  background-color: var(--white-four);
-  list-style: none;
-  padding: 0px 10px;
-  margin: 0px 0px;
+    width: 250px;
+    background-color: #ffffff;
+    list-style: none;
+    padding: 10px 10px;
+    margin: 0px 0px;
+    margin-right: 15px;
+    margin-top: 10px;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 .listContainer:hover {
-  width: 265px;
-  height: 48px;
-  background-color: #e4e4e4;
-  background-color: var(--white-two);
   cursor: pointer;
 }
 
 .main-container {
   display: flex;
   justify-content: center;
+  height: calc(100vh - 68px);
+  background: lightgray;
 }
 
 /* Buttons */
