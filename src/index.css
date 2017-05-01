@@ -50,7 +50,7 @@ body {
   display: flex;
   justify-content: center;
   height: calc(100vh - 68px);
-  background: lightgray;
+  background: #f2f2f2;
 }
 
 /* Buttons */
