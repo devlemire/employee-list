@@ -124,6 +124,10 @@ body {
   font-size: 15px;
 }
 
+.materialInput:focus {
+  border-bottom: 1px solid #4fc3f7;
+}
+
 /* Text & Text Entry */
 
 .titleText {
